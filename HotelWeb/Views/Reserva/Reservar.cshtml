@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reservar</title>
+</head>
+<body>
+    <form asp-action="Reservar" asp-controller="Reserva" method="post">
+        <fieldset>
+            <legend>Cadastrar Reserva</legend>
+            <label>Nome:</label>
+            <input name="txtNome" type="text" placeholder="Seu nome completo" /><br />
+
+            <label>Tipo de quarto :</label>
+            <input name="txtTipoQuarto" type="text" placeholder="Informe o tipo de quarto" /><br />
+
+            <label>Data entrada:</label>
+            <input name="txtDtaEntrada" type="text" /><br />
+
+            <label>Data saída:</label>
+            <input name="txtDtaSaida" type="text" /><br />
+
+            <label>Quantos Adultos:</label>
+            <input name="txtQtdAdultos" type="text" /><br />
+
+            <label>Quantas crianças:</label>
+            <input name="txtQtdCriancas" type="text" /><br />
+
+            <input type="submit" value="Cadastrar" />
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -140,3 +140,6 @@ C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\runtimes\win-x
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.csproj.CoreCompileInputs.cache
+C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.MvcApplicationPartsAssemblyInfo.cache

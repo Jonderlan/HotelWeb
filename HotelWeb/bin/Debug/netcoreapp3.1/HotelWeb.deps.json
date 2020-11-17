@@ -25,6 +25,7 @@
       "HotelWeb/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.10",
+          "Microsoft.EntityFrameworkCore.Tools": "3.1.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -598,7 +599,7 @@
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/1.1.3": {
         "dependencies": {
           "Microsoft.Identity.Client": "3.0.8",
@@ -670,6 +671,18 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/3.1.10": {},
+      "Microsoft.EntityFrameworkCore.Design/3.1.10": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.10"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "3.1.10.0",
+            "fileVersion": "3.100.1020.52002"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.1.10": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.10"
@@ -697,6 +710,11 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/3.1.10": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.1.10"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.1.10": {
@@ -853,7 +871,7 @@
       },
       "Microsoft.Identity.Client/3.0.8": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
           "System.Net.NameResolution": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
@@ -3886,12 +3904,12 @@
       "path": "microsoft.codeanalysis.workspaces.common/3.3.1",
       "hashPath": "microsoft.codeanalysis.workspaces.common.3.3.1.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.5.0": {
+    "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/1.1.3": {
       "type": "package",
@@ -3921,6 +3939,13 @@
       "path": "microsoft.entityframeworkcore.analyzers/3.1.10",
       "hashPath": "microsoft.entityframeworkcore.analyzers.3.1.10.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Design/3.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VqD8E4y78FzQLq8FW0QmcgfqF6R7YAqr27rWaubEYjz6A3FVJ6Xz4/ReB23X8yZAtxIUtO1KjV+lsowlqbMkjA==",
+      "path": "microsoft.entityframeworkcore.design/3.1.10",
+      "hashPath": "microsoft.entityframeworkcore.design.3.1.10.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Relational/3.1.10": {
       "type": "package",
       "serviceable": true,
@@ -3934,6 +3959,13 @@
       "sha512": "sha512-4PB7ziS/IOMJTM4SiLNgMtTrOhGaOQ8/O9Oq6uKTW1dcfSa7+WE6YlztAO5biJD3wyf827FV8IUjMi5smoqmJg==",
       "path": "microsoft.entityframeworkcore.sqlserver/3.1.10",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.3.1.10.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Obu7SuykJ8ouGciuxIHwM/FKBi6fJaIZGEkInq2EVtufflOcepm89yMwAgHRVjb+Rrn7MmjgLYfy1Bm1Chxt0A==",
+      "path": "microsoft.entityframeworkcore.tools/3.1.10",
+      "hashPath": "microsoft.entityframeworkcore.tools.3.1.10.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.10": {
       "type": "package",

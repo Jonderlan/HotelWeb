@@ -12,10 +12,10 @@ namespace HotelWeb.Models {
 
         public string Nome { get; set; }
         public string TipoQuarto { get; set; }
-        public string DataEntrada { get; set; }
-        public string DataSaida { get; set; }
-        public string QuantosAdultos { get; set; }
-        public string QuantosCriancas { get; set; }
+        public DateTime DataEntrada { get; set; }
+        public DateTime DataSaida { get; set; }
+        public int QuantosAdultos { get; set; }
+        public int QuantosCriancas { get; set; }
 
 
 

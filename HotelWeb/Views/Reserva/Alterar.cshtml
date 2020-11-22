@@ -1,0 +1,42 @@
+﻿
+@{
+    Reserva reserva = ViewBag.Reserva;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alterar</title>
+</head>
+<body>
+    <form asp-action="Alterar" asp-controller="Reserva" method="post">
+        <fieldset>
+            <legend>Alterar Reserva</legend>
+            <label>Id:</label>
+            <input value="@reserva.Id" name="txtId" type="text" readonly placeholder="Id da Reserva" /><br />
+
+            <label>Nome:</label>
+            <input value="@reserva.Nome" name="txtNome" type="text" placeholder="Seu nome completo" /><br />
+
+            <label>Tipo de quarto :</label>
+            <input value="@reserva.TipoQuarto" name="txtTipoQuarto" type="text" placeholder="Informe o tipo de quarto" /><br />
+
+            <label>Data entrada:</label>
+            <input value="@reserva.DataEntrada" name="txtDtaEntrada" type="datetime" /><br />
+
+            <label>Data saída:</label>
+            <input value="@reserva.DataSaida" name="txtDtaSaida" type="datetime" /><br />
+
+            <label>Quantos Adultos:</label>
+            <input value="@reserva.QuantosAdultos" name="txtQtdAdultos" type="text" /><br />
+
+            <label>Quantas crianças:</label>
+            <input value="@reserva.QuantosCriancas" name="txtQtdCriancas" type="text" /><br />
+
+            <input type="submit" value="Salvar" />
+        </fieldset>
+    </form>
+</body>
+</html>

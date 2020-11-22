@@ -143,3 +143,4 @@ C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\runtimes\win\l
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.csproj.CoreCompileInputs.cache
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Alterar.cshtml.g.cs

@@ -17,6 +17,7 @@
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Quato</th>
                 <th>Entrada</th>
@@ -41,10 +42,14 @@
                 <td>
                     <a asp-action="Remover" asp-controller="Reserva" asp-route-id="@reservaCadastrada.Id">Remover</a>
                 </td>
+
+                <td>
+                    <a asp-action="Alterar" asp-controller="Reserva" asp-route-id="@reservaCadastrada.Id">Alterar</a>
+                </td>
             </tr>
-            }
-        </tbody>
-    </table>
+        }
+            </tbody>
+        </table>
 
     <p><b>Quantidade de reservas</b> @quantidade</p>
     <p><b>Atualizado em: </b>@dataHora </p>

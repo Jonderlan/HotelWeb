@@ -13,9 +13,11 @@ namespace HotelWeb.DAL {
         public List<Reserva> Listar() => _context.Reservas.ToList();
 
         public Reserva BuscarPorId(int id) => _context.Reservas.Find(id);
+
         public void Cadastrar(Reserva reserva) {
             _context.Reservas.Add(reserva);
             _context.SaveChanges();
+
         }
         public void Remover(int id) {
             _context.Reservas.Remove(BuscarPorId(id));

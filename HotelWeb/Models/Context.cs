@@ -9,6 +9,10 @@ namespace HotelWeb.Models {
 
         public Context(DbContextOptions options) : base(options) { }
 
+        public DbSet<Produto> Produtos { get; set; }
+
+        public DbSet<Quarto> Quartos { get; set; }
+
         public DbSet<Reserva> Reservas { get; set; }
     }
 }

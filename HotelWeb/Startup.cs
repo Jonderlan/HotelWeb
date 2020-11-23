@@ -23,6 +23,7 @@ namespace HotelWeb {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddScoped<ReservaDAO>();
+            services.AddScoped<ProdutoDAO>();
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")));
             services.AddControllersWithViews();
         }

@@ -46,7 +46,6 @@ namespace HotelWeb.Controllers {
 
         public IActionResult Remover(int id) {
 
-            //Completar com o código da remoção.
             _reservaDAO.Remover(id);
             return RedirectToAction("Index", "Reserva");    
         }

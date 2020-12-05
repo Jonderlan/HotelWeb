@@ -1,0 +1,35 @@
+﻿@model List<Quarto>
+
+@{ List<TipoQuarto> tipoQuartos = ViewBag.TipoQuartos; }
+
+
+
+<div id="tipoQuartos" class="div-tipoQuarto">
+    @foreach (TipoQuarto tipoQuartoCadastrado in tipoQuartos)
+    {
+<a class="link-tipoQuarto" asp-action="Index" asp-controller="Home"
+   asp-route-id="@tipoQuartoCadastrado.Id">
+    @tipoQuartoCadastrado.Nome
+</a>}
+</div>
+
+<div id="quartos" class="row">
+    @foreach (Quarto quartoCadastrado in Model)
+    {
+<div class="col-sm-3 div-conteudo">
+    <img src="~/images/@quartoCadastrado.Imagem" alt="@quartoCadastrado.Descricao"
+         style="width:120px;height:100px" class="img-thumbnail" />
+    <br />
+    <span>@quartoCadastrado.Nome</span>
+    <br />
+    <span>
+        <b>Preço: </b> @quartoCadastrado.Preco.ToString("C2")
+    </span>
+    <br />
+    <a class="btn btn-primary" asp-action="AdicionarAoCarrinho"
+       asp-controller="Home"
+       asp-route-id="@quartoCadastrado.Id">
+        Adicionar
+    </a>
+</div>}
+</div>

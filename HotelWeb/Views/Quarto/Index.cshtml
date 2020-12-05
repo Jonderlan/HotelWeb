@@ -1,0 +1,55 @@
+﻿@model List<Quarto>
+
+<h3 class="espacamento-baixo">Gerencimento de Quartos</h3>
+
+<a asp-action="Cadastrar" asp-controller="Quarto"
+   class="btn btn-primary espacamento-baixo">Cadastrar Quarto</a>
+
+<table class="table table-hover table-striped espacamento-baixo">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Imagem</th>
+            <th>Criado em</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Quarto quartoCadastrado in Model)
+        {
+<tr>
+    <td>@quartoCadastrado.Id</td>
+    <td>@quartoCadastrado.Nome</td>
+    <td>@quartoCadastrado.Descricao</td>
+    <td>@quartoCadastrado.Quantidade</td>
+    <td>@quartoCadastrado.Preco.ToString("C2")</td>
+    <td>@quartoCadastrado.TipoQuarto.Nome</td>
+    <td>
+        <img src="~/images/@quartoCadastrado.Imagem" alt="@quartoCadastrado.Descricao"
+             style="width:120px;height:100px" />
+    </td>
+    <td>@quartoCadastrado.CriadoEm</td>
+    <td>
+        <a asp-action="Remover"
+           asp-controller="Quarto"
+           asp-route-id="@quartoCadastrado.Id"
+           class="btn btn-danger">Remover</a>
+    </td>
+    <td>
+        <a asp-action="Alterar"
+           asp-controller="Quarto"
+           asp-route-id="@quartoCadastrado.Id"
+           class="btn btn-warning">Alterar</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
+
+<p><b>Quantidade de quartos: </b> @Model.Count </p>
+<p><b>Dados atualizados: </b> @DateTime.Now </p>

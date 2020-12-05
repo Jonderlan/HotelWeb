@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using HotelWeb.DAL;
 using HotelWeb.Models;
+using HotelWeb.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,10 +21,36 @@ namespace HotelWeb {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
 
-            services.AddScoped<ReservaDAO>();
-            services.AddScoped<ProdutoDAO>();
-            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")));
-            services.AddControllersWithViews();
+            services.Configure<CookiePolicyOptions>(options => {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => false;
+            });
+
+            services.AddScoped<QuartoDAO>();
+            services.AddScoped<TipoQuartoDAO>();
+            services.AddScoped<ItemReservaDAO>();
+            services.AddScoped<Sessao>();
+
+            services.AddHttpContextAccessor();
+
+            services.AddDbContext<Context>
+                (options => options.UseSqlServer(
+                    Configuration.GetConnectionString("Connection")));
+
+            services.AddIdentity<Usuario, IdentityRole>().
+                AddEntityFrameworkStores<Context>().
+                AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Usuario/Login";
+                options.AccessDeniedPath = "/Usuario/AcessoNegado";
+            });
+
+            services.AddSession();
+            services.AddControllersWithViews().AddNewtonsoftJson(
+                options => options.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,12 +64,16 @@ namespace HotelWeb {
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Reserva}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

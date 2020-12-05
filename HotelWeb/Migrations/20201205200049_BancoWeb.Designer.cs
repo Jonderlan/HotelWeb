@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelWeb.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201205025021_BancoWeb")]
+    [Migration("20201205200049_BancoWeb")]
     partial class BancoWeb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

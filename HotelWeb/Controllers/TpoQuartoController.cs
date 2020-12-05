@@ -16,12 +16,12 @@ namespace HotelWeb.Controllers {
             _context = context;
         }
 
-        // GET: Categoria
+        // GET: TipoQuarto
         public async Task<IActionResult> Index() {
             return View(await _context.TipoQuartos.ToListAsync());
         }
 
-        // GET: Categoria/Details/5
+        // GET: TipoQuarto/Details/5
         public async Task<IActionResult> Details(int? id) {
             if (id == null) {
                 return NotFound();
@@ -36,12 +36,12 @@ namespace HotelWeb.Controllers {
             return View(tipoQuarto);
         }
 
-        // GET: Categoria/Create
+        // GET: TipoQuarto/Create
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Categoria/Create
+        // POST: TipoQuarto/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -55,7 +55,7 @@ namespace HotelWeb.Controllers {
             return View(tipoQuarto);
         }
 
-        // GET: Categoria/Edit/5
+        // GET: TipoQuarto/Edit/5
         public async Task<IActionResult> Edit(int? id) {
             if (id == null) {
                 return NotFound();
@@ -68,7 +68,7 @@ namespace HotelWeb.Controllers {
             return View(tipoQuarto);
         }
 
-        // POST: Categoria/Edit/5
+        // POST: TipoQuarto/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -94,7 +94,7 @@ namespace HotelWeb.Controllers {
             return View(tipoQuarto);
         }
 
-        // GET: Categoria/Delete/5
+        // GET: TipoQuarto/Delete/5
         public async Task<IActionResult> Delete(int? id) {
             if (id == null) {
                 return NotFound();

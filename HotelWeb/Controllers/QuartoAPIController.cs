@@ -24,7 +24,7 @@ namespace HotelWeb.Controllers {
             if (quartos.Count > 0) {
                 return Ok(quartos);
             }
-            return BadRequest(new { msg = "Lista de produtos vazia!" });
+            return BadRequest(new { msg = "Lista de quartos vazia!" });
         }
 
         //GET: /api/Quarto/Buscar/1

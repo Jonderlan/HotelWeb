@@ -38,6 +38,7 @@ namespace VendasWeb.Controllers
             {
                 Quarto = quarto,
                 Preco = quarto.Preco,
+                Quantidade = 1,
                 CarrinhoId = _sessao.BuscarCarrinhoId()
             };
             _itemReservaDAO.Cadastrar(item);

@@ -12,50 +12,49 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0"> Hotel WEB </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0">Hotel Meia Boca</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                @if (SignInManager.IsSignedIn(User))
-                {
-    <li class="nav-item active">
-        <a class="nav-link" asp-action="Logout" asp-controller="Usuario">Logout</a>
-    </li>
- }
-else
-{
-<li class="nav-item active">
-    <a class="nav-link" asp-action="Login" asp-controller="Usuario">Login</a>
-</li>
-}
-
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Quarto" asp-action="Index" asp-route-id="0">Cadastro Quarto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Teste 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Teste 2</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
             </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    @if (SignInManager.IsSignedIn(User)) {
+        <li class="nav-item active">
+            <a class="btn btn-danger" asp-action="Logout" asp-controller="Usuario">Logout</a>
+        </li> } else {
+        <li class="nav-item active">
+            <a class="btn btn-warning" asp-action="Login" asp-controller="Usuario">Login</a>
+        </li>}
+
+                </ul>
+            </div>
         </div>
     </nav>
 
-    @*<<nav class="navbar navbar-dark bg-primary">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0">E-commerce Noite</a>
-
-            div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <li class="nav-item active">
-                            <a class="nav-link" asp-action="Logout"
-                               asp-controller="Usuario"> Logout </a>
-                        </li>
-                     }
-                    else
-                    {
-                    <li class="nav-item active">
-                        <a class="nav-link" asp-action="Login"
-                           asp-controller="Usuario"> Login </a>
-                    </li>
-                    }
-                </ul>
-            </div>
-        </nav>*@
 
     <div class="conteudo">
         @RenderBody()

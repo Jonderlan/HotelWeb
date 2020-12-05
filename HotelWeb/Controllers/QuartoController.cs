@@ -9,6 +9,8 @@ using System;
 using System.IO;
 
 namespace HotelWeb.Controllers {
+    //[Authorize(Roles = "ADM")]
+    [Authorize]
     public class QuartoController : Controller {
         //https://getbootstrap.com/
         //https://bootswatch.com/

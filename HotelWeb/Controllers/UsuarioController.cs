@@ -72,7 +72,7 @@ namespace HotelWeb.Controllers {
 
             var name = User.Identity.Name;
             if (result.Succeeded) {
-                return RedirectToAction("Index", "Produto");
+                return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Login ou senha inválidos!");
             return View(usuarioView);

@@ -42,12 +42,12 @@ namespace VendasWeb.Controllers
                 CarrinhoId = _sessao.BuscarCarrinhoId()
             };
             _itemReservaDAO.Cadastrar(item);
-            return RedirectToAction("CarrinhoCompras");
+            return RedirectToAction("CarrinhoReservas");
         }
 
-        public IActionResult CarrinhoCompras()
+        public IActionResult CarrinhoReservas()
         {
-            ViewBag.Title = "Carrinho de compras";
+            ViewBag.Title = "Carrinho de reservas";
             string carrinhoId = _sessao.BuscarCarrinhoId();
             ViewBag.Total = _itemReservaDAO.SomarTotalCarrinho(carrinhoId);
             return View(_itemReservaDAO.ListarPorCarrinhoId(carrinhoId));

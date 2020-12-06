@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using HotelWeb.Models;
 
 namespace HotelWeb.Models {
     public class Context : IdentityDbContext<Usuario> {
@@ -13,5 +14,6 @@ namespace HotelWeb.Models {
         public DbSet<ItemReserva> ItensReserva { get; set; }
 
         public DbSet<UsuarioView> Usuarios { get; set; }
+
     }
 }

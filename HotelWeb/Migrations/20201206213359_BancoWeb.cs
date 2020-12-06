@@ -202,7 +202,6 @@ namespace HotelWeb.Migrations
                     CriadoEm = table.Column<DateTime>(nullable: false),
                     Nome = table.Column<string>(nullable: false),
                     Descricao = table.Column<string>(maxLength: 100, nullable: false),
-                    Quantidade = table.Column<int>(nullable: false),
                     Preco = table.Column<double>(nullable: false),
                     Imagem = table.Column<string>(nullable: true),
                     TipoQuartoId = table.Column<int>(nullable: false)
@@ -226,6 +225,8 @@ namespace HotelWeb.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CriadoEm = table.Column<DateTime>(nullable: false),
                     QuartoId = table.Column<int>(nullable: false),
+                    DataEntrada = table.Column<DateTime>(nullable: false),
+                    DataSaida = table.Column<DateTime>(nullable: false),
                     Quantidade = table.Column<int>(nullable: false),
                     Preco = table.Column<double>(nullable: false),
                     CarrinhoId = table.Column<string>(nullable: true)

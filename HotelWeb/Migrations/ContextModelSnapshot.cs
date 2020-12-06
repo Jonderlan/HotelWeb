@@ -32,6 +32,12 @@ namespace HotelWeb.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DataEntrada")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataSaida")
+                        .HasColumnType("datetime2");
+
                     b.Property<double>("Preco")
                         .HasColumnType("float");
 
@@ -72,9 +78,6 @@ namespace HotelWeb.Migrations
 
                     b.Property<double>("Preco")
                         .HasColumnType("float");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
 
                     b.Property<int>("TipoQuartoId")
                         .HasColumnType("int");

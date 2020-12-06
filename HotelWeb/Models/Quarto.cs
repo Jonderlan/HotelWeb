@@ -13,10 +13,6 @@ namespace HotelWeb.Models {
         public string Descricao { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]
-        [Range(1, 200, ErrorMessage = "Valores entre 1 e 200!")]
-        public int Quantidade { get; set; }
-
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public double Preco { get; set; }
         public string Imagem { get; set; }
 

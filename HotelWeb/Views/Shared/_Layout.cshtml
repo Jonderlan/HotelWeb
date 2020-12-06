@@ -45,10 +45,12 @@
                     @if (SignInManager.IsSignedIn(User)) {
         <li class="nav-item active">
             <a class="btn btn-danger" asp-action="Logout" asp-controller="Usuario">Logout</a>
-        </li> } else {
-        <li class="nav-item active">
-            <a class="btn btn-warning" asp-action="Login" asp-controller="Usuario">Login</a>
-        </li>}
+        </li>
+ } else {
+<li class="nav-item active">
+    <a class="btn btn-warning" asp-action="Login" asp-controller="Usuario">Login</a>
+</li>
+}
 
                 </ul>
             </div>
@@ -61,7 +63,8 @@
     </div>
 
     <hr />
-    <footer class="rodape">
+
+    <footer class="jumbotron text-center" style="margin-bottom:0">
         <p>
             Willian Jonderlan - @DateTime.Now.Year - &copy;
         </p>

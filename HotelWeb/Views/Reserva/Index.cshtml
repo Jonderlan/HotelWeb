@@ -1,53 +1,77 @@
-﻿@model List<Quarto>
+﻿@model IEnumerable<HotelWeb.Models.Reserva>
 
-<h3 class="espacamento-baixo">Gerencimento de Quartos</h3>
+@{
+    ViewData["Title"] = "Index";
+}
 
-<a asp-action="Cadastrar" asp-controller="Quarto"
-   class="btn btn-primary espacamento-baixo">Cadastrar Quarto</a>
+<h1>Index</h1>
 
-<table class="table table-hover table-striped espacamento-baixo">
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
     <thead>
         <tr>
-            <th>#</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Tipo de quarto</th>
-            <th>Imagem</th>
-            <th>Criado em</th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quarto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataChekIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCheckOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriadoEm)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Quarto quartoCadastrado in Model)
-        {
-<tr>
-    <td>@quartoCadastrado.Id</td>
-    <td>@quartoCadastrado.Nome</td>
-    <td>@quartoCadastrado.Descricao</td>
-    <td>@quartoCadastrado.Preco.ToString("C2")</td>
-    <td>@quartoCadastrado.TipoQuarto.Nome</td>
-    <td>
-        <img src="~/images/@quartoCadastrado.Imagem" alt="@quartoCadastrado.Descricao"
-             style="width:120px;height:100px" />
-    </td>
-    <td>@quartoCadastrado.CriadoEm</td>
-    <td>
-        <a asp-action="Remover"
-           asp-controller="Quarto"
-           asp-route-id="@quartoCadastrado.Id"
-           class="btn btn-danger">Remover</a>
-    </td>
-    <td>
-        <a asp-action="Alterar"
-           asp-controller="Quarto"
-           asp-route-id="@quartoCadastrado.Id"
-           class="btn btn-warning">Alterar</a>
-    </td>
-</tr>}
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quarto.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataChekIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCheckOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CriadoEm)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>
-
-<p><b>Quantidade de quartos: </b> @Model.Count </p>
-<p><b>Dados atualizados: </b> @DateTime.Now </p>

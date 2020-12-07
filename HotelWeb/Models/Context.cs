@@ -9,6 +9,8 @@ namespace HotelWeb.Models {
 
         public DbSet<Quarto> Quartos { get; set; }
 
+        public DbSet<Reserva> Reservas { get; set; }
+
         public DbSet<TipoQuarto> TipoQuartos { get; set; }
 
         public DbSet<ItemReserva> ItensReserva { get; set; }

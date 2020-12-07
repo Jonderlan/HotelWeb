@@ -89,6 +89,51 @@ namespace HotelWeb.Migrations
                     b.ToTable("Quartos");
                 });
 
+            modelBuilder.Entity("HotelWeb.Models.Reserva", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCheckOut")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataChekIn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataEntrada")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataSaida")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Observacao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<double>("PrecoTotal")
+                        .HasColumnType("float");
+
+                    b.Property<int>("QuartoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuartoId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Reservas");
+                });
+
             modelBuilder.Entity("HotelWeb.Models.TipoQuarto", b =>
                 {
                     b.Property<int>("Id")
@@ -379,6 +424,19 @@ namespace HotelWeb.Migrations
                         .HasForeignKey("TipoQuartoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("HotelWeb.Models.Reserva", b =>
+                {
+                    b.HasOne("HotelWeb.Models.Quarto", "Quarto")
+                        .WithMany()
+                        .HasForeignKey("QuartoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HotelWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

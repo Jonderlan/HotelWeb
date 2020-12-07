@@ -242,6 +242,39 @@ namespace HotelWeb.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Reservas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CriadoEm = table.Column<DateTime>(nullable: false),
+                    UsuarioId = table.Column<string>(nullable: true),
+                    QuartoId = table.Column<int>(nullable: false),
+                    DataEntrada = table.Column<DateTime>(nullable: false),
+                    DataSaida = table.Column<DateTime>(nullable: false),
+                    DataChekIn = table.Column<DateTime>(nullable: false),
+                    DataCheckOut = table.Column<DateTime>(nullable: false),
+                    Observacao = table.Column<string>(maxLength: 100, nullable: false),
+                    PrecoTotal = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reservas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reservas_Quartos_QuartoId",
+                        column: x => x.QuartoId,
+                        principalTable: "Quartos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reservas_AspNetUsers_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -290,6 +323,16 @@ namespace HotelWeb.Migrations
                 name: "IX_Quartos_TipoQuartoId",
                 table: "Quartos",
                 column: "TipoQuartoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservas_QuartoId",
+                table: "Reservas",
+                column: "QuartoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservas_UsuarioId",
+                table: "Reservas",
+                column: "UsuarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -313,16 +356,19 @@ namespace HotelWeb.Migrations
                 name: "ItensReserva");
 
             migrationBuilder.DropTable(
+                name: "Reservas");
+
+            migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Quartos");
 
             migrationBuilder.DropTable(
-                name: "Quartos");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "TipoQuartos");

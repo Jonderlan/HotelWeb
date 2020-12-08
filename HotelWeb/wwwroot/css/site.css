@@ -17,9 +17,14 @@
 
 .div-tipoQuarto {
     text-align: center;
+    text-decoration:double
     margin-bottom: 32px;
 }
 
 .link-tipoQuarto {
+    margin-right: 8px;
+}
+
+.carouselslide {
     margin-right: 8px;
 }

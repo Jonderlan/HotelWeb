@@ -1,6 +1,6 @@
 ﻿@model List<Quarto>
 
-<h3 class="espacamento-baixo">Gerencimento de Quartos</h3>
+    <legend>Gerencimento de Quartos</legend>
 
 <a asp-action="Cadastrar" asp-controller="Quarto"
    class="btn btn-primary espacamento-baixo">Cadastrar Quarto</a>
@@ -49,5 +49,3 @@
     </tbody>
 </table>
 
-<p><b>Quantidade de quartos: </b> @Model.Count </p>
-<p><b>Dados atualizados: </b> @DateTime.Now </p>

@@ -2,19 +2,18 @@
 
 @{ List<TipoQuarto> tipoQuartos = ViewBag.TipoQuartos; }
 
-<div class="container" style="margin-top:30px">
+<div class="container" style="margin-top:30px" />
     <div class="row">
         
         <div class="col-sm-8">
-            <h2>Quarto Árabe</h2>
+            <h4>Quarto Árabe</h4>
             <h5>Consulte nosso melhor quarto !</h5>
             <img src="https://www.w3schools.com/bootstrap4/la.jpg" class="rounded" alt="Cinque Terre" width="304" height="236">
+            <br>
             <p>A decoração árabe é sinônimo de riqueza, sofisticação e intimismo. Sua sala de estar, quarto ou até mesmo festas de aniversário e casamentos podem ficar ainda mais encantadoras com enfeites e móveis inspirados na decoração árabe simples </p>
             <br>
         </div>
 </div>
-
-
 
 <div id="tipoQuartos" class="div-tipoQuarto">
     @foreach (TipoQuarto tipoQuartoCadastrado in tipoQuartos) {
@@ -37,8 +36,6 @@
         </span>
         <br />
         <br />
-        <a class="btn btn-primary" asp-action="AdicionarAoCarrinho"
-           asp-controller="Home"
-           asp-route-id="@quartoCadastrado.Id">Reservar</a>
+        <a class="btn btn-primary" asp-controller="Reserva" asp-action="Create" asp-route-id="0">Reservar</a>
     </div>}
 </div>

@@ -4,50 +4,48 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Reserva</h4>
+<legend>Cadastrar Reserva</legend>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="QuartoId" class="control-label"></label>
+                <label asp-for="QuartoId" class="control-label">Quarto</label>
                 <select asp-for="QuartoId" class ="form-control" asp-items="ViewBag.QuartoId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="DataEntrada" class="control-label"></label>
+                <label asp-for="DataEntrada" class="control-label">Data Entrada</label>
                 <input asp-for="DataEntrada" class="form-control" />
                 <span asp-validation-for="DataEntrada" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataSaida" class="control-label"></label>
+                <label asp-for="DataSaida" class="control-label">Data saída</label>
                 <input asp-for="DataSaida" class="form-control" />
                 <span asp-validation-for="DataSaida" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataChekIn" class="control-label"></label>
+                <label asp-for="DataChekIn" class="control-label">Data checkin</label>
                 <input asp-for="DataChekIn" class="form-control" />
                 <span asp-validation-for="DataChekIn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataCheckOut" class="control-label"></label>
+                <label asp-for="DataCheckOut" class="control-label">Data chackout</label>
                 <input asp-for="DataCheckOut" class="form-control" />
                 <span asp-validation-for="DataCheckOut" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
+                <label asp-for="Observacao" class="control-label">Observações</label>
                 <input asp-for="Observacao" class="form-control" />
                 <span asp-validation-for="Observacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PrecoTotal" class="control-label"></label>
+                <label asp-for="PrecoTotal" class="control-label">Preço total</label>
                 <input asp-for="PrecoTotal" class="form-control" />
                 <span asp-validation-for="PrecoTotal" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CriadoEm" class="control-label"></label>
+                <label asp-for="CriadoEm" class="control-label">Criado em</label>
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
             </div>
@@ -59,6 +57,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Retornar a lista</a>
 </div>
 

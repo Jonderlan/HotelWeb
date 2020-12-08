@@ -13,29 +13,35 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0">Hotel Meia Boca</a>
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0">Hotel WEB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Quarto" asp-action="Index" asp-route-id="0">Cadastro Quarto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Teste 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Teste 2</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar Quarto</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-controller="TipoQuarto" asp-action="Create" asp-route-id="0">Cadastrar tipo de Quarto</a>
+                        <a class="dropdown-item" asp-controller="TipoQuarto" asp-action="Index" asp-route-id="0">Listar tipo de Quarto</a>
+                        <a class="dropdown-item" asp-controller="Quarto" asp-action="Cadastrar" asp-route-id="0">Cadastro Quarto</a>
+                        <a class="dropdown-item" asp-controller="Quarto" asp-action="Index" asp-route-id="0">Listar Quartos</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar de Reservas</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" asp-controller="Reserva" asp-action="Create" asp-route-id="0">Cadastrar Reserva</a>
+                        <a class="dropdown-item" asp-controller="Reserva" asp-action="Index" asp-route-id="0">Listar tipo de Quarto</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar Usuário</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-controller="Usuario" asp-action="Create" asp-route-id="0">Cadastrar Usuario</a>
+                        <a class="dropdown-item" asp-controller="Usuario" asp-action="Index" asp-route-id="0">Listar Usuários</a>
                     </div>
                 </li>
             </ul>
@@ -45,12 +51,10 @@
                     @if (SignInManager.IsSignedIn(User)) {
         <li class="nav-item active">
             <a class="btn btn-danger" asp-action="Logout" asp-controller="Usuario">Logout</a>
-        </li>
- } else {
-<li class="nav-item active">
-    <a class="btn btn-warning" asp-action="Login" asp-controller="Usuario">Login</a>
-</li>
-}
+        </li> } else {
+        <li class="nav-item active">
+            <a class="btn btn-warning" asp-action="Login" asp-controller="Usuario">Login</a>
+        </li>}
 
                 </ul>
             </div>
@@ -66,7 +70,7 @@
 
     <footer class="jumbotron text-center" style="margin-bottom:0">
         <p>
-            Willian Jonderlan - @DateTime.Now.Year - &copy;
+            Sistemas para Hotel - @DateTime.Now.Year - &copy;
         </p>
     </footer>
 

@@ -1,0 +1,38 @@
+﻿@model List<Quarto>
+
+@{ List<TipoQuarto> tipoQuartos = ViewBag.TipoQuartos; }
+
+<legend>Informações</legend>
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Tipo de quarto</th>
+        <th>Imagem</th>
+        <th>Criado em</th>
+        <th></th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (Quarto quartodetales in Model) {
+<tr>
+    <td>@quartodetales.Id</td>
+    <td>@quartodetales.Nome</td>
+    <td>@quartodetales.Descricao</td>
+    <td>@quartodetales.Preco.ToString("C2")</td>
+    <td>@quartodetales.TipoQuarto.Nome</td>
+    <td>
+        <img src="~/images/@quartodetales.Imagem" alt="@quartodetales.Descricao"
+             style="width:120px;height:100px" />
+    </td>
+
+</tr>}
+</tbody>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Retornar a lista</a>
+</div>
+

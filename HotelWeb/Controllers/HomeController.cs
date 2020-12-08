@@ -31,6 +31,15 @@ namespace VendasWeb.Controllers
             return View(quartos);
         }
 
+        public IActionResult DetalhesQuarto(int id) {
+            ViewBag.TipoQuartos = _tipoQuartoDAO.Listar();
+            List<Quarto> quartos =
+                id == 0 ?
+                _quartoDAO.Listar() :
+                _quartoDAO.ListarPorTipoQuarto(id);
+            return View(quartos);
+        }
+
         public IActionResult AdicionarAoCarrinho(int id)
         {
             Quarto quarto = _quartoDAO.BuscarPorId(id);

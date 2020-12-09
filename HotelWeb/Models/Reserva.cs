@@ -6,7 +6,9 @@ namespace HotelWeb.Models {
     [Table("Reservas")]
     public class Reserva : BaseModel {
 
+        [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }
+        public string UsuarioId { get; set; }
 
         [ForeignKey("QuartoId")]
         public Quarto Quarto { get; set; }
@@ -16,16 +18,11 @@ namespace HotelWeb.Models {
 
         public DateTime DataSaida { get; set; }
 
-        public DateTime DataChekIn { get; set; }
-
-        public DateTime DataCheckOut { get; set; }
-
         [Required(ErrorMessage = "Campo obrigatório!")]
         [MinLength(5, ErrorMessage = "Mínimo 5 caracteres!")]
         [MaxLength(100, ErrorMessage = "Máximo 100 caracteres!")]
         public string Observacao { get; set; }
 
-        public double PrecoTotal { get; set; }
 
 
     }

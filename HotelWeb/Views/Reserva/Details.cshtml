@@ -4,11 +4,16 @@
     ViewData["Title"] = "Details";
 }
 
-<legend>Detalhes da reserva</legend>
-
+<legend>Detalhes Reserva</legend>
+<hr />
 <div>
-    <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Id)
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quarto)
         </dt>
@@ -28,28 +33,10 @@
             @Html.DisplayFor(model => model.DataSaida)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataChekIn)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataChekIn)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataCheckOut)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataCheckOut)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Observacao)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Observacao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PrecoTotal)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PrecoTotal)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CriadoEm)
@@ -60,8 +47,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-warning"asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
     <a class="btn btn-primary" asp-action="Index">Retornar a lista</a>
 </div>
-
-

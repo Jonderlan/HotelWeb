@@ -21,7 +21,7 @@ namespace HotelWeb.Controllers
         // GET: Reserva
         public async Task<IActionResult> Index()
         {
-            var context = _context.Reservas.Include(r => r.Quarto);
+            var context = _context.Reservas.Include(r => r.Quarto).Include(r => r.Usuario);
             return View(await context.ToListAsync());
         }
 
@@ -35,6 +35,7 @@ namespace HotelWeb.Controllers
 
             var reserva = await _context.Reservas
                 .Include(r => r.Quarto)
+                .Include(r => r.Usuario)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)
             {
@@ -47,7 +48,8 @@ namespace HotelWeb.Controllers
         // GET: Reserva/Create
         public IActionResult Create()
         {
-            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Descricao");
+            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Nome");
+            ViewData["UsuarioId"] = new SelectList(_context.Users, "Id", "Email");
             return View();
         }
 
@@ -56,7 +58,7 @@ namespace HotelWeb.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuartoId,DataEntrada,DataSaida,DataChekIn,DataCheckOut,Observacao,PrecoTotal,Id,CriadoEm")] Reserva reserva)
+        public async Task<IActionResult> Create([Bind("UsuarioId,QuartoId,DataEntrada,DataSaida,Observacao,Id,CriadoEm")] Reserva reserva)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +66,8 @@ namespace HotelWeb.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Descricao", reserva.QuartoId);
+            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Nome", reserva.QuartoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Users, "Id", "Email", reserva.UsuarioId);
             return View(reserva);
         }
 
@@ -81,7 +84,8 @@ namespace HotelWeb.Controllers
             {
                 return NotFound();
             }
-            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Descricao", reserva.QuartoId);
+            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Nome", reserva.QuartoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Users, "Id", "Email", reserva.UsuarioId);
             return View(reserva);
         }
 
@@ -90,7 +94,7 @@ namespace HotelWeb.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("QuartoId,DataEntrada,DataSaida,DataChekIn,DataCheckOut,Observacao,PrecoTotal,Id,CriadoEm")] Reserva reserva)
+        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,QuartoId,DataEntrada,DataSaida,Observacao,Id,CriadoEm")] Reserva reserva)
         {
             if (id != reserva.Id)
             {
@@ -117,7 +121,8 @@ namespace HotelWeb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Descricao", reserva.QuartoId);
+            ViewData["QuartoId"] = new SelectList(_context.Quartos, "Id", "Nome", reserva.QuartoId);
+            ViewData["UsuarioId"] = new SelectList(_context.Users, "Id", "Email", reserva.UsuarioId);
             return View(reserva);
         }
 
@@ -131,6 +136,7 @@ namespace HotelWeb.Controllers
 
             var reserva = await _context.Reservas
                 .Include(r => r.Quarto)
+                .Include(r => r.Usuario)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)
             {

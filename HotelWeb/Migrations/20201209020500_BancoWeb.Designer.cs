@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelWeb.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201207115111_BancoWeb")]
+    [Migration("20201209020500_BancoWeb")]
     partial class BancoWeb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,12 +101,6 @@ namespace HotelWeb.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataCheckOut")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataChekIn")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("DataEntrada")
                         .HasColumnType("datetime2");
 
@@ -117,9 +111,6 @@ namespace HotelWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<double>("PrecoTotal")
-                        .HasColumnType("float");
 
                     b.Property<int>("QuartoId")
                         .HasColumnType("int");

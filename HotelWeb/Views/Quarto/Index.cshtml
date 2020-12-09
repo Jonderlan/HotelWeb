@@ -1,6 +1,6 @@
-﻿@model List<Quarto>
+﻿    @model List<Quarto>
 
-    <legend>Gerencimento de Quartos</legend>
+<legend>Gerencimento de Quartos</legend>
 
 <a asp-action="Cadastrar" asp-controller="Quarto"
    class="btn btn-primary espacamento-baixo">Cadastrar Quarto</a>
@@ -20,8 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (Quarto quartoCadastrado in Model)
-        {
+        @foreach (Quarto quartoCadastrado in Model) {
 <tr>
     <td>@quartoCadastrado.Id</td>
     <td>@quartoCadastrado.Nome</td>
@@ -45,7 +44,8 @@
            asp-route-id="@quartoCadastrado.Id"
            class="btn btn-warning">Alterar</a>
     </td>
-</tr>}
+</tr>
+}
     </tbody>
 </table>
 

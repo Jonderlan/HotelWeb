@@ -99,12 +99,6 @@ namespace HotelWeb.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataCheckOut")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataChekIn")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("DataEntrada")
                         .HasColumnType("datetime2");
 
@@ -115,9 +109,6 @@ namespace HotelWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<double>("PrecoTotal")
-                        .HasColumnType("float");
 
                     b.Property<int>("QuartoId")
                         .HasColumnType("int");

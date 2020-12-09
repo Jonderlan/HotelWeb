@@ -186,10 +186,9 @@ C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Ti
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\TipoQuarto\Details.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\TipoQuarto\Edit.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\TipoQuarto\Index.cshtml.g.cs
-C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.csprojAssemblyReference.cache
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Create.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Delete.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Details.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Edit.cshtml.g.cs
 C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Reserva\Index.cshtml.g.cs
-C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\Razor\Views\Quarto\Details.cshtml.g.cs
+C:\Users\Jander\Desktop\HotelWeb\HotelWeb\obj\Debug\netcoreapp3.1\HotelWeb.csprojAssemblyReference.cache

@@ -2,11 +2,9 @@
 
 @{ ViewData["Title"] = "Details"; }
 
-<h1>Details</h1>
-
+<legend>Detalhes do Usuário</legend>
+<hr />
 <div>
-    <h4>UsuarioView</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
@@ -29,6 +27,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" class="btn btn-warning"asp-route-id="@Model.Id">Edit</a> 
     <a class="btn btn-primary" asp-action="Index">Retornar a lista</a>
 </div>

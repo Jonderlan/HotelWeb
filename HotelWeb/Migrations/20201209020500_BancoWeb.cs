@@ -253,10 +253,7 @@ namespace HotelWeb.Migrations
                     QuartoId = table.Column<int>(nullable: false),
                     DataEntrada = table.Column<DateTime>(nullable: false),
                     DataSaida = table.Column<DateTime>(nullable: false),
-                    DataChekIn = table.Column<DateTime>(nullable: false),
-                    DataCheckOut = table.Column<DateTime>(nullable: false),
-                    Observacao = table.Column<string>(maxLength: 100, nullable: false),
-                    PrecoTotal = table.Column<double>(nullable: false)
+                    Observacao = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {

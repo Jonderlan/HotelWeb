@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelWeb.Controllers
 {
+    [Authorize]
     public class TipoQuartoController : Controller
     {
         private readonly Context _context;

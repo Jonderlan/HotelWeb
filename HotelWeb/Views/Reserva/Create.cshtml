@@ -11,30 +11,30 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UsuarioId" class="control-label"></label>
+                <label asp-for="UsuarioId" class="control-label">E-mail</label>
                 <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="QuartoId" class="control-label"></label>
+                <label asp-for="QuartoId" class="control-label">Quarto</label>
                 <select asp-for="QuartoId" class ="form-control" asp-items="ViewBag.QuartoId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="DataEntrada" class="control-label"></label>
+                <label asp-for="DataEntrada" class="control-label">Data Entrada</label>
                 <input asp-for="DataEntrada" class="form-control" />
                 <span asp-validation-for="DataEntrada" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataSaida" class="control-label"></label>
+                <label asp-for="DataSaida" class="control-label">Data Saída</label>
                 <input asp-for="DataSaida" class="form-control" />
                 <span asp-validation-for="DataSaida" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
+                <label asp-for="Observacao" class="control-label">Observação</label>
                 <input asp-for="Observacao" class="form-control" />
                 <span asp-validation-for="Observacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CriadoEm" class="control-label"></label>
+                <label asp-for="CriadoEm" class="control-label">Criado Em</label>
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
             </div>

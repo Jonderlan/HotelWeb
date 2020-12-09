@@ -61,7 +61,11 @@ namespace HotelWeb.Controllers {
             _quartoDAO.Remover(id);
             return RedirectToAction("Index", "Quarto");
         }
- 
+
+        public IActionResult Alterar(int id) {
+            return View(_quartoDAO.BuscarPorId(id));
+        }
+
         [HttpPost]
         public IActionResult Alterar(Quarto quarto) {
             _quartoDAO.Alterar(quarto);

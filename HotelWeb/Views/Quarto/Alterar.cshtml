@@ -2,31 +2,25 @@
 @*Tecnologia da página - Razor*@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Alterar Quarto</title>
-</head>
-<body>
-    <form asp-action="Alterar" asp-controller="Quarto" method="post">
-        <fieldset>
-            <legend>Alterar Quarto</legend>
+<legend>Alterar Quarto</legend>
+<hr />
 
-            <label asp-for="Id">Id:</label>
-            <input asp-for="Id" readonly type="text" placeholder="Id do Quarto" /><br />
-            <input asp-for="Id" name="HdnId" type="hidden" />
+<form asp-action="Alterar" asp-controller="Quarto" method="post">
+    <fieldset>
+        <label asp-for="Id">Id:</label>
+        <input asp-for="Id" readonly type="text" placeholder="Id do Quarto" /><br />
+        <input asp-for="Id" name="HdnId" type="hidden" />
 
-            <label asp-for="Nome">Nome:</label>
-            <input asp-for="Nome" type="text" placeholder="Nome do Quarto" /><br />
+        <label asp-for="Nome">Nome:</label>
+        <input asp-for="Nome" type="text" placeholder="Nome do Quarto" /><br />
 
-            <label asp-for="Descricao">Descrição:</label>
-            <input asp-for="Descricao" type="text" placeholder="Descrição do Quarto" /><br />
+        <label asp-for="Descricao">Descrição:</label>
+        <input asp-for="Descricao" type="text" placeholder="Descrição do Quarto" /><br />
 
-            <label asp-for="Preco">Preço:</label>
-            <input asp-for="Preco" type="text" placeholder="Preço do Quarto" /><br />
+        <label asp-for="Preco">Preço:</label>
+        <input asp-for="Preco" type="text" placeholder="Preço do Quarto" /><br />
 
-            <input  type="submit" value="Salvar" />
-        </fieldset>
-    </form>
-</body>
-</html>
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </fieldset>
+</form>
+
